@@ -7604,6 +7604,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trap
       objectReference: {fileID: 0}
+    - target: {fileID: 2205419587417213804, guid: a85f5e86d1bd29848b919d11cbd9e6fd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     - target: {fileID: 2239877644968858096, guid: a85f5e86d1bd29848b919d11cbd9e6fd,
         type: 3}
       propertyPath: m_LocalPosition.x
