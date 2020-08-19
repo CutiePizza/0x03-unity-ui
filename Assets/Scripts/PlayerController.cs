@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     private int score;
@@ -42,7 +42,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (health == 0)
+        {
+           Debug.Log("Game Over!");
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex,LoadSceneMode.Single);
+
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -57,6 +62,11 @@ public class PlayerController : MonoBehaviour
        {
           health--;
           Debug.Log($"Health {health}");
+       }
+
+       if (other.gameObject.tag == "Goal")
+       {
+          Debug.Log("You win!");
        }
     }
 }
