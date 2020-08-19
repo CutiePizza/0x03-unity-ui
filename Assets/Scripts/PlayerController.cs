@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class PlayerController : MonoBehaviour
 {
     private int score;
     public float speed;
     public Rigidbody rb;
     public int health;
+    public Text scoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,14 +52,18 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
+   void SetScoreText()
+    {
+        scoreText.text = "Score: " + score.ToString();
+    }
     void OnTriggerEnter(Collider other)
     {
        if (other.gameObject.tag == "Pickup")
        {
           score++;
           Destroy(other.gameObject);
-          Debug.Log($"Score: {score}");
+          SetScoreText();
+         // Debug.Log($"Score: {score}");
        }
        if (other.gameObject.tag == "Trap")
        {
@@ -69,4 +76,5 @@ public class PlayerController : MonoBehaviour
           Debug.Log("You win!");
        }
     }
+
 }

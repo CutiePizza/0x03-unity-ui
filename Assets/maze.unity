@@ -4006,6 +4006,7 @@ MonoBehaviour:
   speed: 1000
   rb: {fileID: 988406543}
   health: 0
+  scoreText: {fileID: 1790463707}
 --- !u!1001 &1019122442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7138,6 +7139,7 @@ GameObject:
   - component: {fileID: 1790463706}
   - component: {fileID: 1790463708}
   - component: {fileID: 1790463707}
+  - component: {fileID: 1790463709}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -7205,6 +7207,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790463705}
   m_CullTransparentMesh: 0
+--- !u!114 &1790463709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790463705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
 --- !u!4 &1812793010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 421034486946631839, guid: 491f306ae81ab954088847e461778034,
