@@ -12,6 +12,11 @@ public class PlayerController : MonoBehaviour
     public int health;
     public Text scoreText;
     public Text healthText;
+
+    public Text youWinLose;
+
+    public Image bg;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,10 +53,17 @@ public class PlayerController : MonoBehaviour
     {
         if (health == 0)
         {
-           Debug.Log("Game Over!");
-           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex,LoadSceneMode.Single);
-
+           bg.color = Color.red;
+           youWinLose.text = "Game Over!".ToString();
+           youWinLose.color = Color.white;
+           bg.gameObject.SetActive(true);
+           StartCoroutine(LoadScene(3));
         }
+    }
+    IEnumerator LoadScene(float seconds)
+    {
+       yield return new WaitForSeconds(seconds);
+       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex,LoadSceneMode.Single);
     }
    void SetScoreText()
     {
@@ -79,8 +91,12 @@ public class PlayerController : MonoBehaviour
        }
 
        if (other.gameObject.tag == "Goal")
-       {
-          Debug.Log("You win!");
+       { 
+          bg.color = Color.green;
+          youWinLose.text = "You Win!".ToString();
+          youWinLose.color = Color.black;
+          bg.gameObject.SetActive(true);
+          StartCoroutine(LoadScene(3));
        }
     }
 
